@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;,&quot;cURL&quot;,&quot;ruby&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,10 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="cURL">cURL</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,280 +222,940 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#platforms" class="toc-h1 toc-link" data-title="Platforms">Platforms</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#ios" class="toc-h1 toc-link" data-title="iOS">iOS</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#initial-sdk-setup" class="toc-h1 toc-link" data-title="Initial SDK Setup">Initial SDK Setup</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Delete a Specific Kitten</a>
+                    <a href="#ios-sdk-cocoapod-integration" class="toc-h2 toc-link" data-title="Initial SDK Setup">iOS  SDK CocoaPod Integration</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#push-notifications" class="toc-h1 toc-link" data-title="Push Notifications">Push Notifications</a>
+          </li>
+          <li>
+            <a href="#in-app-messaging" class="toc-h1 toc-link" data-title="In-App Messaging">In-App Messaging</a>
+          </li>
+          <li>
+            <a href="#news-feed" class="toc-h1 toc-link" data-title="News Feed">News Feed</a>
+          </li>
+          <li>
+            <a href="#analytics" class="toc-h1 toc-link" data-title="Analytics">Analytics</a>
+          </li>
+          <li>
+            <a href="#customer-feedback" class="toc-h1 toc-link" data-title="Customer Feedback">Customer Feedback</a>
+          </li>
+          <li>
+            <a href="#advanced-use-cases" class="toc-h1 toc-link" data-title="Advanced Use Cases">Advanced Use Cases</a>
+          </li>
+          <li>
+            <a href="#sample-apps" class="toc-h1 toc-link" data-title="Sample Apps">Sample Apps</a>
+          </li>
+          <li>
+            <a href="#rest-api" class="toc-h1 toc-link" data-title="REST API">REST API</a>
+          </li>
+          <li>
+            <a href="#basics" class="toc-h1 toc-link" data-title="Basics">Basics</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-is-a-rest-api" class="toc-h2 toc-link" data-title="Basics">What is a REST API?</a>
+                  </li>
+                  <li>
+                    <a href="#api-definitions" class="toc-h2 toc-link" data-title="Basics">API Definitions</a>
+                  </li>
+                  <li>
+                    <a href="#api-limits" class="toc-h2 toc-link" data-title="Basics">API Limits</a>
+                  </li>
+                  <li>
+                    <a href="#api-ip-whitelisting" class="toc-h2 toc-link" data-title="Basics">API IP Whitelisting</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-data" class="toc-h1 toc-link" data-title="User Data">User Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-track-endpoint" class="toc-h2 toc-link" data-title="User Data">User Track Endpoint</a>
+                  </li>
+                  <li>
+                    <a href="#user-delete-endpoint" class="toc-h2 toc-link" data-title="User Data">User Delete Endpoint</a>
+                  </li>
+                  <li>
+                    <a href="#sample-post-requests-in-various-languages" class="toc-h2 toc-link" data-title="User Data">Sample POST Requests in Various Languages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#messaging" class="toc-h1 toc-link" data-title="Messaging">Messaging</a>
+          </li>
+          <li>
+            <a href="#email-sync" class="toc-h1 toc-link" data-title="Email Sync">Email Sync</a>
+          </li>
+          <li>
+            <a href="#export" class="toc-h1 toc-link" data-title="Export">Export</a>
+          </li>
+          <li>
+            <a href="#api-campaigns" class="toc-h1 toc-link" data-title="API Campaigns">API Campaigns</a>
+          </li>
+          <li>
+            <a href="#api-connectivity-issues" class="toc-h1 toc-link" data-title="API Connectivity Issues">API Connectivity Issues</a>
+          </li>
+          <li>
+            <a href="#tls-1-0-amp-1-1-deprecation" class="toc-h1 toc-link" data-title="TLS 1.0 &amp; 1.1 Deprecation">TLS 1.0 &amp; 1.1 Deprecation</a>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <h1 id='platforms'>Platforms</h1>
+<p>Welcome</p>
+<h1 id='ios'>iOS</h1><h1 id='initial-sdk-setup'>Initial SDK Setup</h1>
+<p>Installing the Appboy SDK will provide you with basic analytics functionality as well as a working in-app slideup message with which you can engage your users.</p>
+
+<aside class="notice">
+  Time Estimate: 5-10 Minutes
+</aside>
+<h2 id='ios-sdk-cocoapod-integration'>iOS  SDK CocoaPod Integration</h2><h3 id='step-1-install-cocoapods'>Step 1: Install CocoaPods</h3>
+<p>Installing the SDK via the iOS [CocoaPod][apple_initial_setup_1] automates the majority of the installation process for you. Before beginning this process please ensure that you are using [Ruby version 2.0.0][apple_initial_setup_2] or greater. Don&#39;t worry, knowledge of Ruby syntax isn&#39;t necessary to install this SDK.</p>
+
+<p>Simply run the following command to get started: `$ sudo gem install cocoapods</p>
+
+<p><strong>Note</strong>: If you are prompted to overwrite the <code>rake</code> executable please refer to the [Getting Started Directions on CocoaPods.org][apple_initial_setup_3] for further details.</p>
+
+<p><strong>Note</strong>: If you have issues regarding CocoaPods, please refer to the [CocoaPods Troubleshooting Guide][apple_initial_setup_25].</p>
+
+<p>The {{include.platform}} Appboy SDK should be installed or updated using [CocoaPods][apple_initial_setup_1], a dependency manager for Objective-C and Swift projects. CocoaPods provides added simplicity for integration and updating.</p>
+
+<p><strong>Time Estimate: 5-10 Minutes</strong></p>
+
 <p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
 
 <p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='push-notifications'>Push Notifications</h1><h1 id='in-app-messaging'>In-App Messaging</h1><h1 id='news-feed'>News Feed</h1><h1 id='analytics'>Analytics</h1><h1 id='customer-feedback'>Customer Feedback</h1><h1 id='advanced-use-cases'>Advanced Use Cases</h1><h1 id='sample-apps'>Sample Apps</h1><h1 id='rest-api'>REST API</h1><h1 id='basics'>Basics</h1>
+<p>Appboy provides a high performance REST API to allow you to track users, send messages, export data, and more.</p>
+<h2 id='what-is-a-rest-api'>What is a REST API?</h2>
+<p>A REST API is a way to programatically transfer information over the web using a predefined schema. Appboy has created many different endpoints with specific requirements that will perform various actions and/or return various data. API access is done using HTTPS web requests to your company&#39;s REST API endpoint. Typically this is <code>https://api.appboy.com</code>, but your Success Manager will provide an alternative endpoint URL if necessary.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><strong>Note</strong>: Customers using Appboy&#39;s EU database should use <code>https://rest.api.appboy.eu/</code>. For more information on REST APIs endpoints for customers using Appboy&#39;s EU database see <a href="#">FAQs</a>.</p>
+<h2 id='api-definitions'>API Definitions</h2>
+<p>Below is some terminology that you may see in the Appboy REST API documentation and what it means.</p>
+<h3 id='endpoints'>Endpoints</h3>
+<p>Appboy manages a number of different instances for our Dashboard and REST Endpoints. When your account is provisioned you will login to one of the corresponding URLs below. Use the correct REST Endpoint based on which instance you are provisioned to. If you are unsure, open a support ticket or use the table below to match the URL of the dashboard you use to the correct REST Endpoint.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Instance</th>
+<th>Dashboard URL</th>
+<th>REST Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Appboy 01</td>
+<td><code>dashboard.appboy.com</code></td>
+<td><code>https://api.appboy.com</code></td>
+</tr>
+<tr>
+<td>Appboy 02</td>
+<td><code>dashboard-02.appboy.com</code></td>
+<td><code>https://rest-02.iad.appboy.com</code></td>
+</tr>
+<tr>
+<td>Appboy EU</td>
+<td><code>dashboard.appboy.eu</code></td>
+<td><code>https://rest.api.appboy.eu</code></td>
+</tr>
+</tbody></table>
+<h3 id='company-secret-explanation'>Company Secret Explanation</h3>
+<p>The <code>company_secret</code> was formerly included with all API requests but has been deprecated as of October 2014. This field will be ignored for all future API requests to ensure backwards compatibility.</p>
+<h3 id='app-group-identifier-explanation'>App Group Identifier Explanation</h3>
+<p>The <code>app_group_id</code> indicates the app title with which the data in this request is associated. It can be found in the <a href="#">Developer Console</a> section of the Appboy dashboard.</p>
+<h3 id='app-identifier-explanation'>App Identifier Explanation</h3>
+<p>For Custom Events and Revenue, you may want to specify a particular variant of the App in which the event occurred. For example, if you have event data on your servers that you know came from the Android version of your app, you might want to indicate that so that it&#39;s reflected on the dashboard. In that case, you will provide the appropriate app identifier. It can be found in the <a href="#">Developer Console</a> section of the Appboy dashboard.</p>
+<h3 id='external-user-id-explanation'>External User ID Explanation</h3>
+<p>The <code>external_id</code> serves as a unique user identifier for whom you are submitting data. This identifier should be the same as the one you set in the Appboy mobile SDK in order to avoid creating multiple profiles for the same user.</p>
+<h3 id='appboy-user-id-explanation'>Appboy User ID Explanation</h3>
+<p>The <code>appboy_id</code> serves as a unique user identifier that is set by Appboy. This identifier can be used to delete users through the REST API in addition to external_ids.</p>
+
+<p>For more information see:</p>
+
+<ul>
+<li><a href="9">Setting User IDs - iOS</a></li>
+<li><a href="10">Setting User IDs - Android</a></li>
+<li><a href="11">Setting User IDs - Windows Phone 8</a></li>
+<li><a href="12">Setting User IDs - Windows Universal</a></li>
+</ul>
+<h2 id='api-limits'>API Limits</h2>
+<p>The Appboy API infrastructure is designed to handle high volumes of data across our customer base. We enforce API rate limits in order to ensure responsible use of the API.</p>
+
+<table><thead>
+<tr>
+<th>Initial API rate limit</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Requests of any kind, legacy Free customers</td>
+<td>100 per hour</td>
+</tr>
+<tr>
+<td>Requests of any kind, all other customers</td>
+<td>50,000 per hour</td>
+</tr>
+<tr>
+<td>Requests to the Send endpoint specifying a Segment or Connected Audience</td>
+<td>250 per minute</td>
+</tr>
+<tr>
+<td>Users modified per User Track request</td>
+<td>50 users</td>
+</tr>
+</tbody></table>
+
+<p>REST API rate limit increases are considered based on need for customers who are making use of the API batching capabilities. Please batch requests to our API endpoints:
+- A single request to the User Track endpoint can contain Purchases, Custom Events and/or Custom Attribute updates for up to 50 users, specified by <code>external_id</code>
+- A single request to the Messaging endpoints can reach any one of the following:
+  - Up to 50 specific <code>external_ids</code>, each with individual message parameters
+  - A segment of any size created in the Appboy dashboard, specified by its <code>segment_id</code>
+  - An ad-hoc audience segment of any size, defined in the request as a <a href="7">Connected Audience</a> object.</p>
+
+<p>The response headers for any valid request include the current rate limit status:</p>
+
+<table><thead>
+<tr>
+<th>Header Name</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td><code>X-RateLimit-Limit</code></td>
+<td>The maximum number of requests that the consumer is permitted to make per hour.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><code>X-RateLimit-Remaining</code></td>
+<td>The number of requests remaining in the current rate limit window.</td>
+</tr>
+<tr>
+<td><code>X-RateLimit-Reset</code></td>
+<td>The time at which the current rate limit window resets in UTC epoch seconds.</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>If you have questions about API limits please contact your Customer Success Manager or please <a href="mailto:support@appboy.com">email Support</a>.</p>
+<h2 id='api-ip-whitelisting'>API IP Whitelisting</h2>
+<p>For additional security, you can specify a whitelist of IP addresses and subnets which are allowed to make REST API requests for a given App Group. To whitelist specific IP addresses or subnets, navigate to the Developer Console in the Appboy dashboard and modify the section shown below:</p>
+<h1 id='user-data'>User Data</h1>
+<p>The User API allows you to track information on your users by logging data about your users that comes from outside your mobile app. You can also use this API to delete users for testing or other purposes.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>All API endpoints have a data payload limit of 4MB. Attempts to post more data than 4MB will fail with an HTTP 413 Request Entity Too Large.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>The examples below contain the URL https://api.appboy.com, but some customers will need to use a different endpoint URL, for example if you are hosted in Appboy&#39;s EU data center or have a dedicated Appboy installation. Your Success Manager will inform you should use a different endpoint URL.</p>
+<h2 id='user-track-endpoint'>User Track Endpoint</h2>
+<p>This endpoint can be used to record custom events, user attributes, and purchases for users. You can include up to 50 Attributes, Event, and Purchase Objects per request. That is, you can only post attributes for up to 50 users at a time, but in the same API call you can also provide up to 50 events and up to 50 purchases.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<p>Your Endpoint will correspond to your [Appboy Instance][1].</p>
+
+<table><thead>
+<tr>
+<th>Instance</th>
+<th>REST Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Appboy 01</td>
+<td><code>https://api.appboy.com/users/track</code></td>
+</tr>
+<tr>
+<td>Appboy 02</td>
+<td><code>https://rest-02.iad.appboy.com/users/track</code></td>
+</tr>
+<tr>
+<td>Appboy EU</td>
+<td><code>https://rest.api.appboy.eu/users/track</code></td>
+</tr>
+</tbody></table>
+<h3 id='user-track-request'>User Track Request</h3>
+<p><code>POST https://api.appboy.com/users/track</code></p>
+
+<table><thead>
+<tr>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>app_group_id</code> (required, string)</td>
+<td>see App Group Identifier below</td>
+</tr>
+<tr>
+<td><code>attributes</code> (optional, array)</td>
+<td>Attributes Object</td>
+</tr>
+<tr>
+<td><code>events</code> (optional, array)</td>
+<td>Event Object</td>
+</tr>
+<tr>
+<td><code>purchases</code> (optional, array)</td>
+<td>Purchase Object</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong>: Customers using the API for server-to-server calls may need to whitelist <code>api.appboy.com</code> if they&#39;re behind a firewall.</p>
+<h3 id='user-attributes-object-specification'>User Attributes Object Specification</h3>
+<p>An API request with any fields in the Attributes Object will create or update an attribute of that name with the given value on the specified user profile. Use the Appboy User Profile Field names below to update those special values on the user profile in the dashboard or add your own custom attribute data to the user.</p>
+
+<table><thead>
+<tr>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>external_id</code> (required, string)</td>
+<td>see External User ID below</td>
+</tr>
+<tr>
+<td><code>_update_existing_only</code> (optional, boolean)</td>
+<td>Setting this flag to true will put the API in &quot;Update Only&quot; mode. Attributes objects regarding external_ids which Appboy is unaware of will return a non-fatal error. See Server Responses for details.</td>
+</tr>
+<tr>
+<td><code>push_token_import</code> (optional, boolean)</td>
+<td>See note below regarding anonymous push token imports</td>
+</tr>
+<tr>
+<td><code>first_name</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>&quot;Jon&quot;</code></td>
+</tr>
+<tr>
+<td><code>email</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>&quot;bob@example.com&quot;</code></td>
+</tr>
+<tr>
+<td><code>my_custom_attribute</code> (optional)</td>
+<td>Appboy user profile field</td>
+</tr>
+<tr>
+<td><code>my_custom_attribute_2</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>{&quot;inc&quot; : int_value}</code></td>
+</tr>
+<tr>
+<td><code>my_array_custom_attribute</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>[ &quot;Value1&quot;, &quot;Value2&quot; ]</code></td>
+</tr>
+<tr>
+<td><code>my_array_custom_attribute</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>{ &quot;add&quot; : [&quot;Value3&quot;] }</code></td>
+</tr>
+<tr>
+<td><code>my_array_custom_attribute</code> (optional)</td>
+<td>Appboy user profile field e.g. <code>{ &quot;remove&quot; : [ &quot;Value1&quot; ]}</code></td>
+</tr>
+</tbody></table>
+<h4 id='push-token-import'>Push Token Import</h4>
+<p>When importing push tokens from other systems, an <code>external_id</code> is not always available. To maintain communication with these users during your transition to Appboy, you can import the legacy tokens for anonymous users without providing <code>external_id</code> by specifying this parameter.</p>
+
+<p>When specifying <code>push_token_import</code> as <code>true</code>:</p>
+
+<ul>
+<li><code>external_id</code> should <strong>not</strong> be specified</li>
+<li>The attribute object must contain a push token</li>
+<li>If the token already exists in Appboy, the request is ignored; otherwise, Appboy will create a temporary, anonymous user profile for each token to enable you to continue to message these individuals</li>
+</ul>
+
+<p>After import, as each user launches the Appboy-enabled version of your app, Appboy will automatically move their imported push token to their Appboy user profile and clean up the temporary profile.</p>
+<h4 id='custom-attribute-data-types'>Custom Attribute Data Types</h4>
+<p>The following data types can be stored as a custom attribute:</p>
+
+<ul>
+<li>Dates (Must be stored in the [ISO 8601][19] format or in the <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ</code> format)
+
+<ul>
+<li><strong>Note</strong>: Date attributes without a timezone will default to Midnight UTC (and will be formatted on the dashboard as the equivalent of Midnight UTC in the company&#39;s timezone)</li>
+</ul></li>
+<li>Strings</li>
+<li>Floats</li>
+<li>Booleans</li>
+<li>Integers
+
+<ul>
+<li>Integer custom attributes may be incremented by positive or negative integers by assigning them an object with the field &quot;inc&quot; and the value by which you would like to increment them.</li>
+<li>Example: <code>&quot;my_custom_attribute_2&quot; : {&quot;inc&quot; : int_value},</code></li>
+</ul></li>
+<li>Arrays
+
+<ul>
+<li>In addition to setting the values of an array by saying something like <code>&quot;my_array_custom_attribute&quot;:[ &quot;Value1&quot;, &quot;Value2&quot; ]</code> you may add to existing arrays by doing something like <code>&quot;my_array_custom_attribute&quot; : { &quot;add&quot; : [&quot;Value3&quot;] },</code> or remove values from an array by doing something like <code>&quot;my_array_custom_attribute&quot; : { &quot;remove&quot; : [ &quot;Value1&quot; ]}</code></li>
+<li><strong>Note</strong>: The maximum number of elements in Custom Attribute Arrays defaults to 25. The maximum for individual arrays can be increased to up to 100 in the Appboy Dashboard, under &quot;Manage App Group -&gt; Custom Attributes&quot;. Arrays exceeding the maximum number of elements will be truncated to contain the maximum number of elements. For more information on Custom Attribute Arrays and their behavior, see our [Documentation on Arrays][6].</li>
+</ul></li>
+</ul>
+
+<p>For information regarding when you should use a Custom Event vs a Custom Attribute, see our [Best Practices - User Data Collection][15] documentation.</p>
+<h4 id='appboy-user-profile-fields'>Appboy User Profile Fields</h4>
+<table><thead>
+<tr>
+<th>User Profile Field</th>
+<th>Data Type Specification</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>first_name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>dob</code></td>
+<td>(Date of Birth) string in format &quot;YYYY-MM-DD&quot;, e.g., 1980-12-21</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>string, we require that country codes be passed to Appboy in the [ISO-3166-1 alpha-2 standard][17]</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>string, we require that language be passed to Appboy in the [ISO-639-1 standard][24]</td>
+</tr>
+<tr>
+<td><code>time_zone</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>home_city</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>current_location</code></td>
+<td>object of the form {&quot;longitude&quot;: -73.991443, &quot;latitude&quot;: 40.753824}</td>
+</tr>
+<tr>
+<td><code>bio</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>gender</code></td>
+<td>string, &quot;M&quot; or &quot;F&quot;</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string of digits</td>
+</tr>
+<tr>
+<td><code>email_subscribe</code></td>
+<td>string, available values are &quot;opted_in&quot; (explicitly registered to receive email messages), &quot;unsubscribed&quot; (explicitly opted out of email messages), and &quot;subscribed&quot; (neither opted in nor out).</td>
+</tr>
+<tr>
+<td><code>push_subscribe</code></td>
+<td>string, available values are &quot;opted_in&quot; (explicitly registered to receive push messages), &quot;unsubscribed&quot; (explicitly opted out of push messages), and &quot;subscribed&quot; (neither opted in nor out).</td>
+</tr>
+<tr>
+<td><code>date_of_first_session</code></td>
+<td>(Date at which the user first used the app) string in ISO 8601 format or in <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ</code> format</td>
+</tr>
+<tr>
+<td><code>date_of_last_session</code></td>
+<td>(Date at which the user last used the app) string in ISO 8601 format or in <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ</code> format</td>
+</tr>
+<tr>
+<td><code>image_url</code></td>
+<td>string, url of image to be associated with user profile</td>
+</tr>
+<tr>
+<td><code>push_tokens</code></td>
+<td>array of objects with <code>app_id</code> and token string, e.g., <code>[{&quot;app_id&quot;: App Identifier, &quot;token&quot;: &quot;abcd&quot;}]</code></td>
+</tr>
+<tr>
+<td><code>external_id</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>facebook</code></td>
+<td>hash containing any of <code>id</code> (string), <code>likes</code> (array of strings), <code>num_friends</code> (integer)</td>
+</tr>
+<tr>
+<td><code>twitter</code></td>
+<td>hash containing any of <code>id</code> (integer), <code>screen_name</code> (string, Twitter handle), <code>followers_count</code> (integer), <code>friends_count</code> (integer), <code>statuses_count</code> (integer)</td>
+</tr>
+</tbody></table>
+
+<p>Be aware that while you can import language, information Appboy receives from the device takes precedence, and if different, will replace the imported value the next time the user opens your app.</p>
+<h4 id='user-attribute-example-request'>User Attribute Example Request</h4>
+<p><code>POST https://api.appboy.com/users/track</code></p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Content-Type: application/json</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"app_group_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your app group ID"</span><span class="p">,</span><span class="w">
+</span><span class="err"> </span><span class="w"> </span><span class="s2">"attributes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-02-14"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"music_videos_favorited"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"add"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"calvinharris-summer"</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="s2">"remove"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"nickiminaj-anaconda"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="err"> </span><span class="w"> </span><span class="err"> </span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jill"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_profile_picture"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"push_tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="err">App</span><span class="w"> </span><span class="err">Identifier</span><span class="p">,</span><span class="w"> </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">}]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p>This example contains two User Attribute objects of the allowed 50 per API call.</p>
+<h3 id='event-object-specification'>Event Object Specification</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Fields</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td><code>external_id</code> (required, string)</td>
+<td>see External User ID below</td>
+</tr>
+<tr>
+<td><code>app_id</code> (optional, string)</td>
+<td>see App Identifier below</td>
+</tr>
+<tr>
+<td><code>name</code> (optional, string)</td>
+<td>the name of the event</td>
+</tr>
+<tr>
+<td><code>time</code> (optional, datetime)</td>
+<td>as string in ISO 8601 or in <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ</code> format</td>
+</tr>
+<tr>
+<td><code>properties</code> (optional, object)</td>
+<td>Properties Object of the event</td>
+</tr>
+<tr>
+<td><code>_update_existing_only</code> (optional, boolean)</td>
+<td>Setting this flag to true will put the API in &quot;Update Only&quot; mode. Event objects regarding external_ids which Appboy is unaware of will return a non-fatal error. See Server Responses for details.</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Each Event Object in the <em>events</em> array represents a single occurrence of a Custom Event by a particular user at the designated time value.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<ul>
+<li><a href="19">ISO 8601 Time Code Wiki</a></li>
+</ul>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+<p>For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="15">Best Practices - User Data Collection</a> documentation.</p>
+<h4 id='event-example-request'>Event Example Request</h4>
+<p><code>POST https://api.appboy.com/users/track</code></p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Content-Type: application/json</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="s2">"app_group_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your app group ID"</span><span class="p">,</span><span class="w">
+</span><span class="err"> </span><span class="w"> </span><span class="s2">"events"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your-app-id"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"watched_trailer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-07-16T19:20:30+01:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your-app-id"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"rented_movie"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-07-16T19:20:45+01:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+</span></code></pre><h3 id='purchase-object-specfication'>Purchase Object Specfication</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Fields</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td><code>external_id</code> (required, string)</td>
+<td>see External User ID below</td>
+</tr>
+<tr>
+<td><code>app_id</code> (optional, string)</td>
+<td>see App Identifier below</td>
+</tr>
+<tr>
+<td><code>product_id</code> (requried, string)</td>
+<td>identifier for the purchase, e.g. SKU</td>
+</tr>
+<tr>
+<td><code>currency</code> (required, string)</td>
+<td>ISO 4217 Alphabetic Currency Code</td>
+</tr>
+<tr>
+<td><code>price</code> (required, float)</td>
+<td>value in the base currency unit (e.g. Dollars for USD, Yen for JPY)</td>
+</tr>
+<tr>
+<td><code>quantity</code> (optional, integer)</td>
+<td>the quantity purchased (defaults to 1, must be &lt;= 100 -- currently, Appboy treats a quantity <em>X</em> as <em>X</em> separate purchases with quantity 1)</td>
+</tr>
+<tr>
+<td><code>time</code> (required, datetime)</td>
+<td>as string in ISO 8601</td>
+</tr>
+<tr>
+<td><code>properties</code> (optional, object)</td>
+<td>Properties Object of the event</td>
+</tr>
+<tr>
+<td><code>_update_existing_only</code> (optional, boolean)</td>
+<td>Setting this flag to true will put the API in &quot;Update Only&quot; mode. Event objects regarding external_ids which Appboy is unaware of will return a non-fatal error. See Server Responses for details.</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>Each Purchase Object in the <em>purchases</em> array represents a single purchase by a particular user at a particular time.</p>
+
+<ul>
+<li><a href="20">ISO 4217 Currency Code Wiki</a></li>
+</ul>
+<h4 id='purchase-example-request'>Purchase Example Request</h4>
+<p><code>POST https://api.appboy.com/users/track</code></p>
+
+<blockquote>
+<p>Content-Type: application/json</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"app_group_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"your-app-group-id"</span><span class="p">,</span><span class="w">
+</span><span class="err"> </span><span class="w"> </span><span class="s2">"purchases"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"11ae5b4b-2445-4440-a04f-bf537764c9ad"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"backpack"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">40.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-07-16T19:20:30+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"properties"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"color"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"monogram"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"checkout_duration"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"external_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"11ae5b4b-2445-4440-a04f-bf537764c9ad"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pencil"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-07-17T19:20:20+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"properties"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sharpened"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='properties-object'>Properties Object</h3>
+<p>Custom events and purchases may have event properties. The &quot;properties&quot; values should be an Object where the keys are the property names and the values are the property values. Property names must be non-empty strings less than or equal to 255 characters, with no leading dollar signs. Property values can be integers, floats, booleans, datetimes (as strings in ISO8601 or in <code>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ</code> format), or strings less than or equal to 255 characters.</p>
+<h3 id='user-track-responses'>User Track Responses</h3>
+<p>Upon using any of the aforementioned API requests you should receive one of the following three general responses:</p>
+<h4 id='successful-message'>Successful Message</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Successful messages will be met with the following response:</p>
+
+<p><br>
+<br>
+<br></p>
+<h4 id='successful-message-with-non-fatal-errors'>Successful Message with Non-Fatal Errors</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;minor</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">message&gt;</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>If your message is successful but has non-fatal errors such as one invalid Event Object out of a longer list of events you will receive the following response:</p>
+
+<p><br>
+<br>
+<br></p>
+<h4 id='message-with-fatal-errors'>Message with Fatal Errors</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">&lt;fatal</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">message&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;minor</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">message&gt;</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>In the case of a success, any data that was not affected by an error in the <em>errors</em> array will still be processed. If your message has a fatal error you will receive the following response:</p>
+
+<p><br>
+<br>
+<br></p>
+<h4 id='queued-responses'>Queued Responses</h4><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"queued"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>During times of maintenance, Appboy might pause real-time processing of the API. In these situations, the server will return an HTTP Accepted 202 response code and the following body, which indicates that we have received and queued the API call but have not immediately processed it. All scheduled maintenance will be posted to <a href="http://status.appboy.com">http://status.appboy.com</a> ahead of time.</p>
+<h4 id='fatal-error-response-codes'>Fatal Error Response Codes</h4>
+<p>The following status codes and associated error messages will be returned if your request encounters a fatal error. Any of these error codes indicate that no data will be processed.</p>
 
 <table><thead>
 <tr>
 <th>Error Code</th>
-<th>Meaning</th>
+<th>Reason / Cause</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>400 Bad Request</td>
+<td>Bad Syntax</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>401 Unauthorized</td>
+<td>Unknown or missing app group id</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>404 Not Found</td>
+<td>Unknown App Group ID (if provided)</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>429 Rate Limited</td>
+<td>Over rate limit</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>5XX</td>
+<td>Internal server error, you should retry with exponential backoff</td>
 </tr>
 </tbody></table>
+<h3 id='importing-legacy-user-data'>Importing Legacy User Data</h3>
+<p>You may submit data through the Appboy API for a user who has not yet used your mobile app in order to generate a user profile. If the user subsequently uses the application all information following their identification via the SDK will be merged with the existing user profile you created via the API call. Any user behavior that is recorded anonymously by the SDK prior to identification will be lost upon merging with the existing API generated user profile.</p>
 
+<p>The segmentation tool will include these users regardless of whether they have engaged with the app. If you want to exclude users uploaded via the User API whom have not yet engaged with the app you should add the filter -- Session Count &gt; 0.</p>
+<h2 id='user-delete-endpoint'>User Delete Endpoint</h2>
+<p>This endpoint allows you to delete any user profile by specifying their external identifier (UserID). Up to 50 <code>external_ids</code> or <code>appboy_ids</code> can be included in a single request. Only one of <code>external_ids</code> or <code>appboy_ids</code> can be included in a single request. Please note that their associated event data will still exist in the dashboard after you delete the user.</p>
+
+<p>Your Endpoint will correspond to your <a href="1">Appboy Instance</a>.</p>
+
+<table><thead>
+<tr>
+<th>Instance</th>
+<th>REST Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Appboy 01</td>
+<td><code>https://api.appboy.com/users/delete</code></td>
+</tr>
+<tr>
+<td>Appboy 02</td>
+<td><code>https://rest-02.iad.appboy.com/users/delete</code></td>
+</tr>
+<tr>
+<td>Appboy EU</td>
+<td><code>https://rest.api.appboy.eu/users/delete</code></td>
+</tr>
+</tbody></table>
+<h3 id='user-delete-request'>User Delete Request</h3>
+<p><code>POST https://api.appboy.com/users/delete</code></p>
+
+<table><thead>
+<tr>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>app_group_id</code> (required, string)</td>
+<td>see App Group Identifier below</td>
+</tr>
+<tr>
+<td><code>external_ids</code> (optional, array)</td>
+<td>external ids for the users to delete</td>
+</tr>
+<tr>
+<td><code>appboy_ids</code> (optional, array)</td>
+<td>appboy ids for the users to delete</td>
+</tr>
+</tbody></table>
+<h3 id='users-delete-response'>Users Delete Response</h3>
+<blockquote>
+<p>Content-Type: application/json</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">(required</span><span class="p">,</span><span class="w"> </span><span class="err">integer)</span><span class="w"> </span><span class="err">number</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">users</span><span class="w"> </span><span class="err">successfully</span><span class="w"> </span><span class="err">deleted</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"invalid_user_ids"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">(optional</span><span class="p">,</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">string)</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">identifiers</span><span class="w"> </span><span class="err">provided</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">request</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">did</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">correspond</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">known</span><span class="w"> </span><span class="err">user</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Note</strong>: This action CANNOT be undone. It will PERMANENTLY remove users which may cause discrepancies in your data.</p>
+<h2 id='sample-post-requests-in-various-languages'>Sample POST Requests in Various Languages</h2><pre class="highlight python tab-python"><code><span class="c"># Necessary built-in imports to be utilized later</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib2</span>
+
+<span class="c"># Define your static variables (app group ID, request url)</span>
+<span class="n">request_url</span> <span class="o">=</span> <span class="s">'https://api.appboy.com/users/track'</span>
+<span class="n">app_group_id</span> <span class="o">=</span> <span class="s">"your-app-group-id"</span>
+
+<span class="c"># Define the content type as a dictionary</span>
+<span class="n">headers_params</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-Type'</span><span class="p">:</span><span class="s">'application/json'</span><span class="p">}</span>
+
+<span class="c"># Store the attribute values of your users as a list of dictionaries</span>
+<span class="n">attributes</span> <span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s">'external_id'</span><span class="p">:</span><span class="s">"python user ID"</span><span class="p">,</span> <span class="s">'first_attribute'</span><span class="p">:</span>
+             <span class="s">"your user's first attribute"</span><span class="p">,</span> <span class="s">'second_attribute'</span><span class="p">:</span> <span class="s">"your user's second attribute"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">'external_id'</span><span class="p">:</span><span class="s">"your second user's external id"</span><span class="p">,</span><span class="s">'first_attribute'</span><span class="p">:</span>
+             <span class="s">"first attribute"</span><span class="p">,</span> <span class="s">'second_attribute'</span><span class="p">:</span> <span class="s">"second attribute"</span><span class="p">}</span>
+             <span class="p">]</span>
+
+<span class="c"># Store the request data as a dictionary</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>  <span class="s">'app_group_id'</span><span class="p">:</span><span class="n">app_group_id</span><span class="p">,</span>
+          <span class="s">'attributes'</span> <span class="p">:</span> <span class="n">attributes</span>   <span class="p">}</span>
+<span class="c"># Convert the data into JSON format</span>
+<span class="n">JSONdata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c"># Create the request</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">JSONdata</span><span class="p">,</span> <span class="n">headers_params</span><span class="p">)</span>
+<span class="c"># Open the request</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="c"># Get the response code</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c"># Close the opened request</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span>
+<span class="c"># Check that the request worked correctly</span>
+<span class="k">print</span> <span class="n">response</span>
+
+<span class="c"># This process can alternately be completed by using the external library</span>
+<span class="c"># 'Requests' with the commented out code below:</span>
+
+<span class="c"># import requests</span>
+<span class="c"># r = requests.post(request_url, data=data, headers=headers_params)</span>
+<span class="c"># print r.status_code</span>
+<span class="c"># print r.text</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="c1"># Required libraries to import</span>
+<span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'multi_json'</span>
+
+<span class="c1"># Define your static variables (app group ID, request url)</span>
+<span class="n">request_url</span> <span class="o">=</span> <span class="s1">'https://api.appboy.com/users/track'</span>
+<span class="n">app_group_id</span> <span class="o">=</span> <span class="s1">'your-app-group-id'</span>
+
+<span class="c1"># Define the content type as a hash</span>
+<span class="n">headers_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="o">=&gt;</span><span class="s1">'application/json'</span><span class="p">}</span>
+
+<span class="c1"># Store the attribute values of your users as an array of hashes</span>
+<span class="n">attributes</span> <span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s1">'external_id'</span><span class="o">=&gt;</span><span class="s2">"ruby user ID"</span><span class="p">,</span> <span class="s1">'first_attribute'</span><span class="o">=&gt;</span>
+            <span class="s2">"your user's first attribute"</span><span class="p">,</span> <span class="s1">'second_attribute'</span><span class="o">=&gt;</span> <span class="s2">"your user's second attribute"</span><span class="p">},</span>
+        <span class="p">{</span><span class="s1">'external_id'</span><span class="o">=&gt;</span><span class="s2">"your second user's external id"</span><span class="p">,</span><span class="s1">'first_attribute'</span><span class="o">=&gt;</span>
+            <span class="s2">"first attribute"</span><span class="p">,</span> <span class="s1">'second_attribute'</span><span class="o">=&gt;</span> <span class="s2">"second attribute"</span><span class="p">}</span>
+        <span class="p">]</span>
+
+<span class="c1"># Store the request data as a hash</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:app_group_id</span> <span class="o">=&gt;</span> <span class="n">app_group_id</span><span class="p">,</span>
+        <span class="ss">:attributes</span> <span class="o">=&gt;</span> <span class="n">attributes</span><span class="p">}</span>
+<span class="c1"># Convert the data into JSON format</span>
+<span class="no">JSONdata</span> <span class="o">=</span> <span class="no">MultiJson</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># Send and check the POST request</span>
+<span class="nb">puts</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="no">JSONdata</span><span class="p">,</span> <span class="n">headers_params</span><span class="p">)</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="c1"># Define your static variables (app group ID, request url)
+</span><span class="nv">$app_group_id</span> <span class="o">=</span> <span class="s1">'your-app-group-id'</span><span class="p">;</span>
+<span class="nv">$request_url</span> <span class="o">=</span> <span class="s1">'https://api.appboy.com/users/track'</span><span class="p">;</span>
+
+<span class="c1">// Initialize your users by creating a map containing
+// your desired attributes and associated attribute values.
+</span>
+<span class="nv">$user1</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+       <span class="s1">'external_id'</span><span class="o">=&gt;</span><span class="s2">"php user ID"</span><span class="p">,</span>
+       <span class="s1">'first_attribute'</span><span class="o">=&gt;</span> <span class="s2">"your user's first attribute"</span><span class="p">,</span>
+       <span class="s1">'second_attribute'</span><span class="o">=&gt;</span> <span class="s2">"your user's second attribute"</span>
+             <span class="p">);</span>
+<span class="nv">$user2</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+       <span class="s1">'external_id'</span><span class="o">=&gt;</span><span class="s2">"your second user's external id"</span><span class="p">,</span>
+       <span class="s1">'first_attribute'</span><span class="o">=&gt;</span> <span class="s2">"your user's first attribute"</span><span class="p">,</span>
+       <span class="s1">'second_attribute'</span><span class="o">=&gt;</span> <span class="s2">"your user's second attribute"</span>
+             <span class="p">);</span>
+
+<span class="c1">// Note: Arrays in php are really ordered maps, hence
+// the 'array' initialization associated with each user.
+</span>
+<span class="c1">// Instantiate your attributes array using your previously
+// defined user maps.
+</span><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nv">$user1</span><span class="p">,</span> <span class="nv">$user2</span><span class="p">);</span>
+
+<span class="c1">// Organize the data to send to the API as another map
+// comprised of your previously defined variables.
+</span><span class="nv">$postData</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'app_group_id'</span> <span class="o">=&gt;</span> <span class="nv">$app_group_id</span><span class="p">,</span>
+    <span class="s1">'attributes'</span> <span class="o">=&gt;</span> <span class="nv">$attributes</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="c1">// Create the context for the request
+</span><span class="nv">$context</span> <span class="o">=</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span> <span class="s2">"Content-Type: application/json</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$postData</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">));</span>
+
+<span class="c1">// Send the request
+</span><span class="nv">$response</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">,</span> <span class="nv">$context</span><span class="p">);</span>
+
+<span class="c1">// Post the response to ensure a successful request
+</span><span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre><h1 id='messaging'>Messaging</h1><h1 id='email-sync'>Email Sync</h1><h1 id='export'>Export</h1><h1 id='api-campaigns'>API Campaigns</h1><h1 id='api-connectivity-issues'>API Connectivity Issues</h1><h1 id='tls-1-0-amp-1-1-deprecation'>TLS 1.0 &amp; 1.1 Deprecation</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="cURL">cURL</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
