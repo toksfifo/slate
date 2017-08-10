@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;python&quot;,&quot;cURL&quot;,&quot;ruby&quot;,&quot;php&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;,&quot;ruby&quot;,&quot;php&quot;,&quot;curl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,9 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="cURL">cURL</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="curl">curl</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,57 +222,19 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#platforms" class="toc-h1 toc-link" data-title="Platforms">Platforms</a>
-          </li>
-          <li>
-            <a href="#ios" class="toc-h1 toc-link" data-title="iOS">iOS</a>
-          </li>
-          <li>
-            <a href="#initial-sdk-setup" class="toc-h1 toc-link" data-title="Initial SDK Setup">Initial SDK Setup</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#ios-sdk-cocoapod-integration" class="toc-h2 toc-link" data-title="Initial SDK Setup">iOS  SDK CocoaPod Integration</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#push-notifications" class="toc-h1 toc-link" data-title="Push Notifications">Push Notifications</a>
-          </li>
-          <li>
-            <a href="#in-app-messaging" class="toc-h1 toc-link" data-title="In-App Messaging">In-App Messaging</a>
-          </li>
-          <li>
-            <a href="#news-feed" class="toc-h1 toc-link" data-title="News Feed">News Feed</a>
-          </li>
-          <li>
-            <a href="#analytics" class="toc-h1 toc-link" data-title="Analytics">Analytics</a>
-          </li>
-          <li>
-            <a href="#customer-feedback" class="toc-h1 toc-link" data-title="Customer Feedback">Customer Feedback</a>
-          </li>
-          <li>
-            <a href="#advanced-use-cases" class="toc-h1 toc-link" data-title="Advanced Use Cases">Advanced Use Cases</a>
-          </li>
-          <li>
-            <a href="#sample-apps" class="toc-h1 toc-link" data-title="Sample Apps">Sample Apps</a>
-          </li>
-          <li>
             <a href="#rest-api" class="toc-h1 toc-link" data-title="REST API">REST API</a>
-          </li>
-          <li>
-            <a href="#basics" class="toc-h1 toc-link" data-title="Basics">Basics</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#what-is-a-rest-api" class="toc-h2 toc-link" data-title="Basics">What is a REST API?</a>
+                    <a href="#what-is-a-rest-api" class="toc-h2 toc-link" data-title="REST API">What is a REST API?</a>
                   </li>
                   <li>
-                    <a href="#api-definitions" class="toc-h2 toc-link" data-title="Basics">API Definitions</a>
+                    <a href="#api-definitions" class="toc-h2 toc-link" data-title="REST API">API Definitions</a>
                   </li>
                   <li>
-                    <a href="#api-limits" class="toc-h2 toc-link" data-title="Basics">API Limits</a>
+                    <a href="#api-limits" class="toc-h2 toc-link" data-title="REST API">API Limits</a>
                   </li>
                   <li>
-                    <a href="#api-ip-whitelisting" class="toc-h2 toc-link" data-title="Basics">API IP Whitelisting</a>
+                    <a href="#api-ip-whitelisting" class="toc-h2 toc-link" data-title="REST API">API IP Whitelisting</a>
                   </li>
               </ul>
           </li>
@@ -308,43 +270,54 @@
           <li>
             <a href="#tls-1-0-amp-1-1-deprecation" class="toc-h1 toc-link" data-title="TLS 1.0 &amp; 1.1 Deprecation">TLS 1.0 &amp; 1.1 Deprecation</a>
           </li>
+          <li>
+            <a href="#ios" class="toc-h1 toc-link" data-title="iOS">iOS</a>
+          </li>
+          <li>
+            <a href="#initial-sdk-setup" class="toc-h1 toc-link" data-title="Initial SDK Setup">Initial SDK Setup</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ios-sdk-cocoapod-integration" class="toc-h2 toc-link" data-title="Initial SDK Setup">iOS  SDK CocoaPod Integration</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#push-notifications" class="toc-h1 toc-link" data-title="Push Notifications">Push Notifications</a>
+          </li>
+          <li>
+            <a href="#in-app-messaging" class="toc-h1 toc-link" data-title="In-App Messaging">In-App Messaging</a>
+          </li>
+          <li>
+            <a href="#news-feed" class="toc-h1 toc-link" data-title="News Feed">News Feed</a>
+          </li>
+          <li>
+            <a href="#analytics" class="toc-h1 toc-link" data-title="Analytics">Analytics</a>
+          </li>
+          <li>
+            <a href="#customer-feedback" class="toc-h1 toc-link" data-title="Customer Feedback">Customer Feedback</a>
+          </li>
+          <li>
+            <a href="#advanced-use-cases" class="toc-h1 toc-link" data-title="Advanced Use Cases">Advanced Use Cases</a>
+          </li>
+          <li>
+            <a href="#sample-apps" class="toc-h1 toc-link" data-title="Sample Apps">Sample Apps</a>
+          </li>
+          <li>
+            <a href="#etc" class="toc-h1 toc-link" data-title="Etc...">Etc...</a>
+          </li>
       </div>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='platforms'>Platforms</h1>
-<p>Welcome</p>
-<h1 id='ios'>iOS</h1><h1 id='initial-sdk-setup'>Initial SDK Setup</h1>
-<p>Installing the Appboy SDK will provide you with basic analytics functionality as well as a working in-app slideup message with which you can engage your users.</p>
-
-<aside class="notice">
-  Time Estimate: 5-10 Minutes
-</aside>
-<h2 id='ios-sdk-cocoapod-integration'>iOS  SDK CocoaPod Integration</h2><h3 id='step-1-install-cocoapods'>Step 1: Install CocoaPods</h3>
-<p>Installing the SDK via the iOS [CocoaPod][apple_initial_setup_1] automates the majority of the installation process for you. Before beginning this process please ensure that you are using [Ruby version 2.0.0][apple_initial_setup_2] or greater. Don&#39;t worry, knowledge of Ruby syntax isn&#39;t necessary to install this SDK.</p>
-
-<p>Simply run the following command to get started: `$ sudo gem install cocoapods</p>
-
-<p><strong>Note</strong>: If you are prompted to overwrite the <code>rake</code> executable please refer to the [Getting Started Directions on CocoaPods.org][apple_initial_setup_3] for further details.</p>
-
-<p><strong>Note</strong>: If you have issues regarding CocoaPods, please refer to the [CocoaPods Troubleshooting Guide][apple_initial_setup_25].</p>
-
-<p>The {{include.platform}} Appboy SDK should be installed or updated using [CocoaPods][apple_initial_setup_1], a dependency manager for Objective-C and Swift projects. CocoaPods provides added simplicity for integration and updating.</p>
-
-<p><strong>Time Estimate: 5-10 Minutes</strong></p>
-
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='push-notifications'>Push Notifications</h1><h1 id='in-app-messaging'>In-App Messaging</h1><h1 id='news-feed'>News Feed</h1><h1 id='analytics'>Analytics</h1><h1 id='customer-feedback'>Customer Feedback</h1><h1 id='advanced-use-cases'>Advanced Use Cases</h1><h1 id='sample-apps'>Sample Apps</h1><h1 id='rest-api'>REST API</h1><h1 id='basics'>Basics</h1>
+        <h1 id='rest-api'>REST API</h1>
 <p>Appboy provides a high performance REST API to allow you to track users, send messages, export data, and more.</p>
 <h2 id='what-is-a-rest-api'>What is a REST API?</h2>
 <p>A REST API is a way to programatically transfer information over the web using a predefined schema. Appboy has created many different endpoints with specific requirements that will perform various actions and/or return various data. API access is done using HTTPS web requests to your company&#39;s REST API endpoint. Typically this is <code>https://api.appboy.com</code>, but your Success Manager will provide an alternative endpoint URL if necessary.</p>
 
-<p><strong>Note</strong>: Customers using Appboy&#39;s EU database should use <code>https://rest.api.appboy.eu/</code>. For more information on REST APIs endpoints for customers using Appboy&#39;s EU database see <a href="#">FAQs</a>.</p>
+<aside class="notice">
+Customers using Appboy's EU database should use <code>https://rest.api.appboy.eu/</code>. For more information on REST APIs endpoints for customers using Appboy's EU database see <a href="">FAQs</a>.
+</aside>
 <h2 id='api-definitions'>API Definitions</h2>
 <p>Below is some terminology that you may see in the Appboy REST API documentation and what it means.</p>
 <h3 id='endpoints'>Endpoints</h3>
@@ -448,7 +421,9 @@
 </tr>
 </tbody></table>
 
-<p>If you have questions about API limits please contact your Customer Success Manager or please <a href="mailto:support@appboy.com">email Support</a>.</p>
+<aside class="success">
+  If you have questions about API limits please contact your Customer Success Manager or please <a href="">email Support</a>.
+</aside>
 <h2 id='api-ip-whitelisting'>API IP Whitelisting</h2>
 <p>For additional security, you can specify a whitelist of IP addresses and subnets which are allowed to make REST API requests for a given App Group. To whitelist specific IP addresses or subnets, navigate to the Developer Console in the Appboy dashboard and modify the section shown below:</p>
 <h1 id='user-data'>User Data</h1>
@@ -508,7 +483,9 @@
 </tr>
 </tbody></table>
 
-<p><strong>Note</strong>: Customers using the API for server-to-server calls may need to whitelist <code>api.appboy.com</code> if they&#39;re behind a firewall.</p>
+<aside class="notice">
+  Customers using the API for server-to-server calls may need to whitelist <code>api.appboy.com</code> if they're behind a firewall.
+</aside>
 <h3 id='user-attributes-object-specification'>User Attributes Object Specification</h3>
 <p>An API request with any fields in the Attributes Object will create or update an attribute of that name with the given value on the specified user profile. Use the Appboy User Profile Field names below to update those special values on the user profile in the dashboard or add your own custom attribute data to the user.</p>
 
@@ -597,7 +574,7 @@
 </ul></li>
 </ul>
 
-<p>For information regarding when you should use a Custom Event vs a Custom Attribute, see our [Best Practices - User Data Collection][15] documentation.</p>
+<p>For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="">Best Practices - User Data Collection</a> documentation.</p>
 <h4 id='appboy-user-profile-fields'>Appboy User Profile Fields</h4>
 <table><thead>
 <tr>
@@ -691,7 +668,9 @@
 </tr>
 </tbody></table>
 
-<p>Be aware that while you can import language, information Appboy receives from the device takes precedence, and if different, will replace the imported value the next time the user opens your app.</p>
+<aside class="notice">
+  Be aware that while you can import language, information Appboy receives from the device takes precedence, and if different, will replace the imported value the next time the user opens your app.
+</aside>
 <h4 id='user-attribute-example-request'>User Attribute Example Request</h4>
 <p><code>POST https://api.appboy.com/users/track</code></p>
 
@@ -757,7 +736,9 @@
 <li><a href="19">ISO 8601 Time Code Wiki</a></li>
 </ul>
 
-<p>For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="15">Best Practices - User Data Collection</a> documentation.</p>
+<aside class="notice">
+  For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="">Best Practices - User Data Collection</a> documentation.
+</aside>
 <h4 id='event-example-request'>Event Example Request</h4>
 <p><code>POST https://api.appboy.com/users/track</code></p>
 
@@ -1030,7 +1011,9 @@
   </span><span class="s2">"invalid_user_ids"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">(optional</span><span class="p">,</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">string)</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">identifiers</span><span class="w"> </span><span class="err">provided</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">request</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">did</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">correspond</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">known</span><span class="w"> </span><span class="err">user</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><strong>Note</strong>: This action CANNOT be undone. It will PERMANENTLY remove users which may cause discrepancies in your data.</p>
+<aside class="warning">
+  This action CANNOT be undone. It will PERMANENTLY remove users which may cause discrepancies in your data.
+</aside>
 <h2 id='sample-post-requests-in-various-languages'>Sample POST Requests in Various Languages</h2><pre class="highlight python tab-python"><code><span class="c"># Necessary built-in imports to be utilized later</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">urllib2</span>
@@ -1148,14 +1131,38 @@
 </span><span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
 
 <span class="cp">?&gt;</span>
-</code></pre><h1 id='messaging'>Messaging</h1><h1 id='email-sync'>Email Sync</h1><h1 id='export'>Export</h1><h1 id='api-campaigns'>API Campaigns</h1><h1 id='api-connectivity-issues'>API Connectivity Issues</h1><h1 id='tls-1-0-amp-1-1-deprecation'>TLS 1.0 &amp; 1.1 Deprecation</h1>
+</code></pre><h1 id='messaging'>Messaging</h1><h1 id='email-sync'>Email Sync</h1><h1 id='export'>Export</h1><h1 id='api-campaigns'>API Campaigns</h1><h1 id='api-connectivity-issues'>API Connectivity Issues</h1><h1 id='tls-1-0-amp-1-1-deprecation'>TLS 1.0 &amp; 1.1 Deprecation</h1><h1 id='ios'>iOS</h1><h1 id='initial-sdk-setup'>Initial SDK Setup</h1>
+<p>Installing the Appboy SDK will provide you with basic analytics functionality as well as a working in-app slideup message with which you can engage your users.</p>
+
+<aside class="notice">
+  Time Estimate: 5-10 Minutes
+</aside>
+<h2 id='ios-sdk-cocoapod-integration'>iOS  SDK CocoaPod Integration</h2><h3 id='step-1-install-cocoapods'>Step 1: Install CocoaPods</h3>
+<p>Installing the SDK via the iOS [CocoaPod][apple_initial_setup_1] automates the majority of the installation process for you. Before beginning this process please ensure that you are using [Ruby version 2.0.0][apple_initial_setup_2] or greater. Don&#39;t worry, knowledge of Ruby syntax isn&#39;t necessary to install this SDK.</p>
+
+<p>Simply run the following command to get started: `$ sudo gem install cocoapods</p>
+
+<p><strong>Note</strong>: If you are prompted to overwrite the <code>rake</code> executable please refer to the [Getting Started Directions on CocoaPods.org][apple_initial_setup_3] for further details.</p>
+
+<p><strong>Note</strong>: If you have issues regarding CocoaPods, please refer to the [CocoaPods Troubleshooting Guide][apple_initial_setup_25].</p>
+
+<p>The {{include.platform}} Appboy SDK should be installed or updated using [CocoaPods][apple_initial_setup_1], a dependency manager for Objective-C and Swift projects. CocoaPods provides added simplicity for integration and updating.</p>
+
+<p><strong>Time Estimate: 5-10 Minutes</strong></p>
+
+<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+
+<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<h1 id='push-notifications'>Push Notifications</h1><h1 id='in-app-messaging'>In-App Messaging</h1><h1 id='news-feed'>News Feed</h1><h1 id='analytics'>Analytics</h1><h1 id='customer-feedback'>Customer Feedback</h1><h1 id='advanced-use-cases'>Advanced Use Cases</h1><h1 id='sample-apps'>Sample Apps</h1><h1 id='etc'>Etc...</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="cURL">cURL</a>
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="curl">curl</a>
           </div>
       </div>
     </div>
