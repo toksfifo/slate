@@ -29,7 +29,9 @@ Fields  | Description
 `events` (optional, array) | Event Object
 `purchases` (optional, array) | Purchase Object
 
-__Note__: Customers using the API for server-to-server calls may need to whitelist `api.appboy.com` if they're behind a firewall.
+<aside class="notice">
+  Customers using the API for server-to-server calls may need to whitelist <code>api.appboy.com</code> if they're behind a firewall.
+</aside>
 
 ###  User Attributes Object Specification
 
@@ -76,7 +78,7 @@ The following data types can be stored as a custom attribute:
   - In addition to setting the values of an array by saying something like `"my_array_custom_attribute":[ "Value1", "Value2" ]` you may add to existing arrays by doing something like `"my_array_custom_attribute" : { "add" : ["Value3"] },` or remove values from an array by doing something like `"my_array_custom_attribute" : { "remove" : [ "Value1" ]}`
   - __Note__: The maximum number of elements in Custom Attribute Arrays defaults to 25. The maximum for individual arrays can be increased to up to 100 in the Appboy Dashboard, under "Manage App Group -> Custom Attributes". Arrays exceeding the maximum number of elements will be truncated to contain the maximum number of elements. For more information on Custom Attribute Arrays and their behavior, see our [Documentation on Arrays][6].
 
-For information regarding when you should use a Custom Event vs a Custom Attribute, see our [Best Practices - User Data Collection][15] documentation.
+For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="">Best Practices - User Data Collection</a> documentation.
 
 #### Appboy User Profile Fields
 
@@ -104,7 +106,9 @@ For information regarding when you should use a Custom Event vs a Custom Attribu
 | `facebook` | hash containing any of `id` (string), `likes` (array of strings), `num_friends` (integer) |
 | `twitter` | hash containing any of `id` (integer), `screen_name` (string, Twitter handle), `followers_count` (integer), `friends_count` (integer), `statuses_count` (integer) |
 
-Be aware that while you can import language, information Appboy receives from the device takes precedence, and if different, will replace the imported value the next time the user opens your app.
+<aside class="notice">
+  Be aware that while you can import language, information Appboy receives from the device takes precedence, and if different, will replace the imported value the next time the user opens your app.
+</aside>
 
 ####  User Attribute Example Request
 
@@ -152,7 +156,9 @@ Each Event Object in the _events_ array represents a single occurrence of a Cust
 
 - [ISO 8601 Time Code Wiki](19)
 
-For information regarding when you should use a Custom Event vs a Custom Attribute, see our [Best Practices - User Data Collection](15) documentation.
+<aside class="notice">
+  For information regarding when you should use a Custom Event vs a Custom Attribute, see our <a href="">Best Practices - User Data Collection</a> documentation.
+</aside>
 
 #### Event Example Request
 
@@ -393,7 +399,9 @@ Fields  | Description
 }
 ```
 
-__Note__: This action CANNOT be undone. It will PERMANENTLY remove users which may cause discrepancies in your data.
+<aside class="warning">
+  This action CANNOT be undone. It will PERMANENTLY remove users which may cause discrepancies in your data.
+</aside>
 
 ## Sample POST Requests in Various Languages
 

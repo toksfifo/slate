@@ -23,18 +23,18 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #2E3336 !default;
+$nav-bg: rgb(248, 248, 248) !default;
 $examples-bg: #2E3336 !default;
 $code-bg: #1E2224 !default;
 $code-annotation-bg: #191D1F !default;
-$nav-subitem-bg: #1E2224 !default;
-$nav-active-bg: #0F75D4 !default;
-$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
+$nav-subitem-bg: rgb(238, 238, 238) !default;
+$nav-active-bg: rgb(238, 238, 238) !default;
+$nav-active-parent-bg: rgb(238, 238, 238) !default; // parent links of the current section
 $lang-select-border: #000 !default;
 $lang-select-bg: #1E2224 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #F3F7F9 !default;
+$main-bg: rgb(255, 255, 255) !default;
 $aside-notice-bg: #8fbcd4 !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
@@ -44,19 +44,19 @@ $search-notice-bg: #c97a7e !default;
 // TEXT COLORS
 ////////////////////
 $main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
-$nav-active-text: #fff !default;
-$nav-active-parent-text: #fff !default; // parent links of the current section
-$lang-select-text: #fff !default; // color of unselected language tab text
-$lang-select-active-text: #fff !default; // color of selected language tab text
-$lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
+$nav-text: rgb(100, 100, 100) !default;
+$nav-active-text: rgb(255, 35, 83) !default;
+$nav-active-parent-text: rgb(100, 100, 100) !default; // parent links of the current section
+$lang-select-text: rgb(255, 255, 255) !default; // color of unselected language tab text
+$lang-select-active-text: rgb(255, 255, 255) !default; // color of selected language tab text
+$lang-select-pressed-text: rgb(255, 255, 255) !default; // color of language tab text when mouse is pressed
 
 
 // SIZES
 ////////////////////
-$nav-width: 230px !default; // width of the navbar
-$examples-width: 50% !default; // portion of the screen taken up by code examples
-$logo-margin: 0px !default; // margin below logo
+$nav-width: 250px !default; // width of the navbar
+$examples-width: 35% !default; // portion of the screen taken up by code examples
+$logo-margin: 50px !default; // margin below logo
 $main-padding: 28px !default; // padding to left and right of content & examples
 $nav-padding: 15px !default; // padding to left and right of navbar
 $nav-v-padding: 10px !default; // padding used vertically around search boxes and results
@@ -100,4 +100,41 @@ $search-box-border-color: #666 !default;
 %break-words {
     word-break: break-all;
     hyphens: auto;
+}
+
+
+// EXTERNAL
+a[data-title="iOS"],
+a[data-title="REST API"],
+a[data-title="Etc..."] {
+  color: rgb(37, 37, 37);
+}
+
+a[data-title="iOS"],
+a[data-title="Etc..."] {
+  padding-top: 20px;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  z-index: 100;
+}
+
+.logo {
+  position: relative;
+  height: 50px;
+  left: 20px;
+  top: 10px;
+}
+
+#rest-api {
+  padding-top: 74px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(42, 192, 191);
 }

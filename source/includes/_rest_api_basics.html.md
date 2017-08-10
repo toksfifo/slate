@@ -1,12 +1,10 @@
-# Basics
-
-Appboy provides a high performance REST API to allow you to track users, send messages, export data, and more.
-
 ## What is a REST API?
 
 A REST API is a way to programatically transfer information over the web using a predefined schema. Appboy has created many different endpoints with specific requirements that will perform various actions and/or return various data. API access is done using HTTPS web requests to your company's REST API endpoint. Typically this is `https://api.appboy.com`, but your Success Manager will provide an alternative endpoint URL if necessary.
 
-**Note**: Customers using Appboy's EU database should use `https://rest.api.appboy.eu/`. For more information on REST APIs endpoints for customers using Appboy's EU database see [FAQs]().
+<aside class="notice">
+Customers using Appboy's EU database should use <code>https://rest.api.appboy.eu/</code>. For more information on REST APIs endpoints for customers using Appboy's EU database see <a href="">FAQs</a>.
+</aside>
 
 ## API Definitions
 
@@ -75,7 +73,9 @@ Header Name             | Description
 `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window.
 `X-RateLimit-Reset`     | The time at which the current rate limit window resets in UTC epoch seconds.
 
-If you have questions about API limits please contact your Customer Success Manager or please [email Support](mailto:support@appboy.com).
+<aside class="success">
+  If you have questions about API limits please contact your Customer Success Manager or please <a href="">email Support</a>.
+</aside>
 
 ##  API IP Whitelisting
 
